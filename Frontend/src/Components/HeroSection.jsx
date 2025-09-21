@@ -14,7 +14,7 @@ import {
   Tooltip,
   Legend,
 } from "recharts";
-import Farm1 from "../assets/farm1.jpeg";
+import Farm1 from "../assets/farm1.jpg";
 import Farm2 from "../assets/farm2.webp";
 import Farm3 from "../assets/farm3.jpeg";
 import { useNavigate } from "react-router-dom";
@@ -96,7 +96,7 @@ export default function HeroSection() {
   const navigate = useNavigate();
 
   return (
-    <section className="relative w-full min-h-[calc(100vh-64px)] md:min-h-[calc(100vh-80px)] overflow-hidden bg-black mt-[64px] md:mt-[65px]">
+    <section className="relative w-full min-h-[calc(100vh-64px)] md:min-h-[calc(100vh-80px)] overflow-hidden bg-black mt-[64px] md:mt-[70px]">
       <AnimatePresence>
         <motion.div
           key={index}
@@ -112,7 +112,7 @@ export default function HeroSection() {
             alt="Farm Hero"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-b md:bg-gradient-to-r from-black/85 via-black/70 to-black/40" />
+          <div className="absolute inset-0 bg-gradient-to-b md:bg-gradient-to-r from-black/50 via-black/45 to-black/40" />
 
           {/* CONTENT */}
           <div className="absolute inset-0 flex flex-col-reverse md:flex-row items-center justify-center md:justify-between gap-8 md:gap-12 px-6 sm:px-10 md:px-16 lg:px-24">

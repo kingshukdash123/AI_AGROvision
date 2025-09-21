@@ -18,7 +18,7 @@ const ContactSection = () => {
               <div>
                 <h4 className="text-lg font-semibold text-green-700">Our Office</h4>
                 <p className="text-gray-700">
-                  123 Creative Street, Innovation Hub, Mumbai, MH 400001
+                  Khushidram Nagar, Haldia, West Bengal 721657
                 </p>
               </div>
             </div>
@@ -26,14 +26,14 @@ const ContactSection = () => {
               <FaPhone className="text-green-600 text-2xl" />
               <div>
                 <h4 className="text-lg font-semibold text-green-700">Phone</h4>
-                <p className="text-gray-700">+91 98765 43210</p>
+                <p className="text-gray-700">+91 6987674321</p>
               </div>
             </div>
             <div className="flex items-start space-x-4">
               <FaEnvelope className="text-green-600 text-2xl" />
               <div>
                 <h4 className="text-lg font-semibold text-green-700">Email</h4>
-                <p className="text-gray-700">support@demoagency.com</p>
+                <p className="text-gray-700">supportagroai@gmail.com</p>
               </div>
             </div>
           </div>

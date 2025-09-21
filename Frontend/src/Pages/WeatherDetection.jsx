@@ -54,7 +54,6 @@ export default function WeatherPage() {
 
   const getCropAdvice = () => {
     if (!weather) return null;
-
     let advice = "";
     switch (selectedCrop) {
       case "Wheat":
@@ -90,7 +89,7 @@ export default function WeatherPage() {
         transition={{ duration: 0.6 }}
         className="text-center mb-12"
       >
-        <h1 className="text-4xl sm:text-5xl font-extrabold text-green-900">
+        <h1 className="text-4xl sm:text-5xl font-extrabold text-green-900 flex items-center justify-center gap-2">
           🌾 Smart Weather Dashboard
         </h1>
         <p className="text-green-700 mt-4 max-w-2xl mx-auto text-lg">
@@ -110,11 +109,51 @@ export default function WeatherPage() {
         />
         <button
           onClick={fetchWeather}
-          className="px-6 py-3 bg-gradient-to-r from-green-400 to-green-500 hover:scale-105 text-white font-semibold rounded-xl shadow-md transition-all"
+          className="px-6 py-3 bg-gradient-to-r from-green-400 to-green-500 hover:scale-105 text-white font-semibold rounded-xl shadow-md transition-all flex items-center justify-center gap-2"
         >
           🔍 Check Weather
         </button>
       </div>
+
+      {/* EMPTY STATE */}
+      {!weather && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6 }}
+          className="flex flex-col items-center justify-center text-center mt-16"
+        >
+          <motion.div
+            animate={{ y: [0, -10, 0] }}
+            transition={{ repeat: Infinity, duration: 3 }}
+            className="text-7xl mb-4"
+          >
+            🌱
+          </motion.div>
+          <h2 className="text-2xl sm:text-3xl font-bold text-green-900 mb-2">
+            Plan Your Crops Smarter
+          </h2>
+          <p className="text-green-700 max-w-md mb-6">
+            Get the latest weather forecast and AI-powered advice for your
+            fields. Enter your city above to get started!
+          </p>
+
+          {/* Sample City Buttons */}
+          <div className="flex flex-wrap gap-3 justify-center">
+            {["Delhi", "Mumbai", "Bengaluru", "Chennai", "Kolkata"].map(
+              (sample) => (
+                <button
+                  key={sample}
+                  onClick={() => setCity(sample)}
+                  className="px-4 py-2 bg-white rounded-lg border border-green-300 shadow-sm hover:bg-green-100 transition"
+                >
+                  {sample}
+                </button>
+              )
+            )}
+          </div>
+        </motion.div>
+      )}
 
       {weather && (
         <>
@@ -159,7 +198,12 @@ export default function WeatherPage() {
                 <YAxis yAxisId="left" />
                 <YAxis yAxisId="right" orientation="right" />
                 <Tooltip />
-                <Bar yAxisId="right" dataKey="rain" fill="#3b82f6" radius={[5, 5, 0, 0]} />
+                <Bar
+                  yAxisId="right"
+                  dataKey="rain"
+                  fill="#3b82f6"
+                  radius={[5, 5, 0, 0]}
+                />
                 <Line
                   yAxisId="left"
                   type="monotone"
@@ -210,7 +254,8 @@ export default function WeatherPage() {
             >
               🌱 <h4 className="font-bold text-green-900 mb-2">Soil Health</h4>
               <p className="text-green-700">
-                Loosen topsoil after rainfall to improve aeration and root growth.
+                Loosen topsoil after rainfall to improve aeration and root
+                growth.
               </p>
             </motion.div>
             <motion.div
@@ -219,7 +264,8 @@ export default function WeatherPage() {
             >
               🐛 <h4 className="font-bold text-green-900 mb-2">Pest Alert</h4>
               <p className="text-green-700">
-                High humidity may increase pest attacks — use preventive measures.
+                High humidity may increase pest attacks — use preventive
+                measures.
               </p>
             </motion.div>
             <motion.div
@@ -228,7 +274,8 @@ export default function WeatherPage() {
             >
               📈 <h4 className="font-bold text-green-900 mb-2">Market Tip</h4>
               <p className="text-green-700">
-                Good weather = good yield! Monitor market trends for better prices.
+                Good weather = good yield! Monitor market trends for better
+                prices.
               </p>
             </motion.div>
           </div>
@@ -245,11 +292,11 @@ export default function WeatherPage() {
               🚀 Ready to Boost Your Yield?
             </h3>
             <p className="text-green-700 max-w-xl mx-auto mb-6">
-              Get full AI-based recommendations for seed planning, fertilizer use,
-              and irrigation scheduling based on live weather data.
+              Get full AI-based recommendations for seed planning, fertilizer
+              use, and irrigation scheduling based on live weather data.
             </p>
             <NavLink
-              to='/reccomend'
+              to="/reccomend"
               className="px-6 py-3 bg-gradient-to-r from-green-400 to-green-500 text-white rounded-xl font-semibold shadow-md hover:scale-105 transition"
             >
               Get Recommendations →

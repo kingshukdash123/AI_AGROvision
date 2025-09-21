@@ -1,4 +1,5 @@
 import { Facebook, Instagram, Twitter, Linkedin } from "lucide-react";
+import { NavLink } from "react-router-dom";
 
 export default function Footer() {
   return (
@@ -24,13 +25,13 @@ export default function Footer() {
       </div>
 
       {/* Footer Content */}
-      <div className="relative z-10 px-6 sm:px-12 md:px-20 lg:px-32 py-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-12 md:px-16 lg:px-20 py-14 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12 text-center md:text-left">
         {/* Brand Info */}
         <div>
-          <h2 className="text-2xl font-bold bg-gradient-to-r from-green-300 to-green-500 bg-clip-text text-transparent">
+          <h2 className="text-3xl font-extrabold bg-gradient-to-r from-green-300 to-green-500 bg-clip-text text-transparent">
             AgroAI
           </h2>
-          <p className="mt-3 text-sm text-gray-400 leading-relaxed">
+          <p className="mt-4 text-sm leading-relaxed text-gray-400 max-w-xs mx-auto md:mx-0">
             Revolutionizing agriculture with AI-powered insights and real-time
             analytics to help farmers make smarter decisions.
           </p>
@@ -38,66 +39,43 @@ export default function Footer() {
 
         {/* Quick Links */}
         <div>
-          <h3 className="text-lg font-semibold text-white mb-3">
+          <h3 className="text-lg font-semibold text-white mb-4">
             Quick Links
           </h3>
-          <ul className="space-y-2 text-gray-400">
-            <li className="hover:text-green-400 cursor-pointer transition">
-              Home
-            </li>
-            <li className="hover:text-green-400 cursor-pointer transition">
-              Services
-            </li>
-            <li className="hover:text-green-400 cursor-pointer transition">
-              Insights
-            </li>
-            <li className="hover:text-green-400 cursor-pointer transition">
-              Contact
-            </li>
-          </ul>
-        </div>
-
-        {/* Resources */}
-        <div>
-          <h3 className="text-lg font-semibold text-white mb-3">
-            Resources
-          </h3>
-          <ul className="space-y-2 text-gray-400">
-            <li className="hover:text-green-400 cursor-pointer transition">
-              Blog
-            </li>
-            <li className="hover:text-green-400 cursor-pointer transition">
-              Case Studies
-            </li>
-            <li className="hover:text-green-400 cursor-pointer transition">
-              FAQs
-            </li>
-            <li className="hover:text-green-400 cursor-pointer transition">
-              Privacy Policy
-            </li>
+          <ul className="space-y-3">
+            {[
+              { name: "Home", link: "/" },
+              { name: "About", link: "/about" },
+              { name: "Weather", link: "/weather" },
+              { name: "Contact", link: "/contact" },
+            ].map((item, i) => (
+              <NavLink key={i} to={item.link}>
+                <li className="hover:text-green-400 hover:translate-x-1 transition-all duration-300 cursor-pointer">
+                  {item.name}
+                </li>
+              </NavLink>
+            ))}
           </ul>
         </div>
 
         {/* Contact Info */}
         <div>
-          <h3 className="text-lg font-semibold text-white mb-3">
+          <h3 className="text-lg font-semibold text-white mb-4">
             Get in Touch
           </h3>
-          <p className="text-gray-400 text-sm">
-            📍 123 Greenfield Road, AgroCity
-          </p>
-          <p className="text-gray-400 text-sm">📞 +91 98765 43210</p>
-          <p className="text-gray-400 text-sm">✉️ support@agroai.com</p>
+          <p className="text-gray-400 text-sm">Khushidram Nagar, Haldia, West Bengal</p>
+          <p className="text-gray-400 text-sm">📞 +91 6987674321</p>
+          <p className="text-gray-400 text-sm">✉️ supportagroai@gmail.com</p>
 
           {/* Social Icons */}
-          <div className="flex gap-4 mt-4">
+          <div className="flex gap-4 mt-5 justify-center md:justify-start">
             {[Facebook, Instagram, Twitter, Linkedin].map((Icon, i) => (
               <a
                 key={i}
                 href="#"
-                className="p-2 rounded-full bg-white/10 hover:bg-green-500 hover:text-black transition"
+                className="p-2 rounded-full bg-white/10 hover:bg-green-400 hover:text-black transition transform hover:-translate-y-1 hover:shadow-lg"
               >
-                <Icon className="w-4 h-4" />
+                <Icon className="w-5 h-5" />
               </a>
             ))}
           </div>
@@ -105,8 +83,8 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="relative z-10 border-t border-white/10 text-center py-4 text-sm text-gray-500">
-        © {new Date().getFullYear()} AgroAI. All rights reserved.
+      <div className="relative z-10 border-t border-white/10 text-center py-4 text-xs sm:text-sm text-gray-500">
+        © {new Date().getFullYear()} <span className="text-green-400 font-medium">AgroAI</span>. All rights reserved.
       </div>
     </footer>
   );
