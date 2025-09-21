@@ -9,6 +9,7 @@ import ContactSection from "./Pages/ContactSection";
 import ScrollToTop from "./Pages/ScrollToTop";
 import RecommendationPage from "./Pages/RecommendationPage";
 import AnalyzePage from "./Pages/Analyze";
+import GetStarted from "./Pages/GetStarted";
 
 export default function App() {
   return (
@@ -27,6 +28,7 @@ export default function App() {
         <Route path="/login" element={<Login />} />
         <Route path='/reccomend' element={<RecommendationPage />} />
         <Route path="/analyze" element={<AnalyzePage/>} />
+        <Route path="/get" element={<GetStarted/>} />
       </Routes>
       <Footer/>
     </BrowserRouter>

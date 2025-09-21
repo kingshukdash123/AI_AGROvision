@@ -62,9 +62,10 @@ useEffect(() => {
     <header data-aos="fade-down" className="fixed top-0 z-50 left-0 right-0">
       <div className="bg-white/90 border-b-2">
         <div className="flex items-center justify-between px-4 md:px-8 py-3">
-          <NavLink to="/" className="flex items-center space-x-2 text-white font-bold text-xl">
-            <img src={Logo} alt="Logo" className="h-10 w-auto object-contain" />
+          <NavLink to="/" className="flex items-center space-x-2 text-black font-bold text-xl">
+            <img src={Logo} alt="Logo" className="h-auto w-11  object-contain" />
             {/* DEMO */}
+            AgroAI
           </NavLink>
 
           {/* Desktop Nav */}
@@ -95,7 +96,7 @@ useEffect(() => {
       id="google_translate_element"
     ></div><span className='text-lg font-medium pt-2 pr-3'>Eng</span></div>
             <NavLink
-              to="/book"
+              to="/get"
               className="px-5 py-2 rounded-full text-white font-semibold shadow-md bg-[#10753C] hover:bg-[#57821f] hover:text-gray-200 transition-all duration-300"
             >
               Get Started
@@ -139,7 +140,7 @@ useEffect(() => {
           ))}
 
           <NavLink
-            to="/book"
+            to="/get"
             onClick={closeDrawer}
             className="mt-4 px-6 py-2 w-full text-center rounded-full text-white font-semibold shadow-md bg-[#57821f] hover:from-white hover:to-white  transition-all duration-300"
           >

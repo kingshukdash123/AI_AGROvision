@@ -3,10 +3,12 @@ import AboutImg from "../assets/about-farm.jpg"; // Replace with your image
 import MissionImg from "../assets/mission.jpg";
 import VisionImg from "../assets/vision.webp";
 import TeamImg from "../assets/team.jpg";
+import AboutHero from "../Components/AboutHero";
 
 export default function AboutPage() {
   return (
     <section className="bg-gradient-to-b from-[#a4e7bc] via-green-200 to-transparent min-h-screen">
+      <AboutHero/>
       {/* HERO SECTION */}
       <div className="relative w-full py-20 flex flex-col md:flex-row items-center justify-center px-6 sm:px-12 md:px-20 lg:px-32">
         <motion.div
@@ -20,7 +22,7 @@ export default function AboutPage() {
             About <span className="text-green-700">AgriAI</span>
           </h1>
           <p className="text-green-800 text-base sm:text-lg leading-relaxed">
-            At AgriAI, we help farmers make smarter decisions using AI-driven
+            At AgrOAI, we help farmers make smarter decisions using AI-driven
             insights. Our goal is to boost productivity, reduce costs, and
             create a sustainable farming future.
           </p>
@@ -85,7 +87,7 @@ export default function AboutPage() {
       </div>
 
       {/* TEAM SECTION */}
-      <div className="px-6 sm:px-12 md:px-20 lg:px-32 py-20 text-center">
+      {/* <div className="px-6 sm:px-12 md:px-20 lg:px-32 py-20 text-center">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -102,9 +104,9 @@ export default function AboutPage() {
           transition={{ duration: 0.7 }}
           viewport={{ once: true }}
           className="flex flex-wrap justify-center gap-8"
-        >
+        > */}
           {/* TEAM MEMBER CARD */}
-          {[1, 2, 3].map((member) => (
+          {/* {[1, 2, 3].map((member) => (
             <div
               key={member}
               className="bg-white/70 backdrop-blur-md rounded-2xl p-6 shadow-md w-60 hover:shadow-green-400/30 hover:-translate-y-1 transition-transform"
@@ -121,9 +123,9 @@ export default function AboutPage() {
                 Agri Expert & AI Specialist
               </p>
             </div>
-          ))}
-        </motion.div>
-      </div>
+          ))} */}
+        {/* </motion.div>
+      </div> */}
     </section>
   );
 }
